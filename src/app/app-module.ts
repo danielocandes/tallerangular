@@ -1,8 +1,8 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing-module';
+import { HttpClientModule } from '@angular/common/http';
 import { App } from './app';
+import { SeriesListComponent } from './series/series-list/series-list';
 
 @NgModule({
   declarations: [
@@ -10,11 +10,10 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    SeriesListComponent
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
+  providers: [],
   bootstrap: [App]
 })
 export class AppModule { }

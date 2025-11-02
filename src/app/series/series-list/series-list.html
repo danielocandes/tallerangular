@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3>Listado de Series</h3>
+
+  <div *ngIf="loading">Cargando series...</div>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <table *ngIf="!loading && !error" class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Canal</th>
+        <th>Temporadas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of series">
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.channel }}</td>
+        <td>{{ s.seasons }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="averageSeasons !== null" class="mt-2">
+    <strong>Promedio de temporadas:</strong> {{ averageSeasons }}
+  </div>
+</div>
