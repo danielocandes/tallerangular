@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SeriesService } from '../series';
 import { Serie } from '../serie.model';
-import { SeriesDetailComponent } from '../series-detail/series-detail'; // 👈 Importa el nuevo componente
+import { SeriesDetailComponent } from '../series-detail/series-detail';
 
 @Component({
   selector: 'app-series-list',
@@ -12,7 +12,7 @@ import { SeriesDetailComponent } from '../series-detail/series-detail'; // 👈 
 })
 export class SeriesListComponent implements OnInit {
   series: Serie[] = [];
-  selectedSerie: Serie | null = null; // 👈 nueva propiedad
+  selectedSerie: Serie | null = null;
   averageSeasons: number | null = null;
   loading = true;
   error: string | null = null;
@@ -35,7 +35,7 @@ export class SeriesListComponent implements OnInit {
   }
 
   selectSerie(serie: Serie): void {
-    this.selectedSerie = serie; // 👈 guarda la serie seleccionada
+    this.selectedSerie = serie;
   }
 
   private calculateAverage(): void {
