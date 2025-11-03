@@ -1,0 +1,12 @@
+<div *ngIf="serie" class="card mt-3 shadow-sm" style="max-width: 600px; margin: auto;">
+  <img [src]="serie.poster" class="card-img-top" alt="{{ serie.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ serie.name }}</h5>
+    <p class="card-text"><strong>Canal:</strong> {{ serie.channel }}</p>
+    <p class="card-text"><strong>Temporadas:</strong> {{ serie.seasons }}</p>
+    <p class="card-text">{{ serie.description }}</p>
+    <a [href]="serie.webpage" target="_blank" class="btn btn-primary">
+        Página oficial
+    </a>
+  </div>
+</div>
